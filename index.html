@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>我的服务器测试页面</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #1890ff;
+        }
+        #time {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>欢迎访问我的服务器！</h1>
+        <div id="time">加载中...</div>
+        <p>本页面用于测试 IPv6 + 域名是否正常工作。</p>
+    </div>
+
+    <script>
+        // 动态更新时间
+        function updateTime() {
+            const now = new Date();
+            const timeStr = now.toLocaleString();
+            document.getElementById("time").innerText = "当前时间：" + timeStr;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
